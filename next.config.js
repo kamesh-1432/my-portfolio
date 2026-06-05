@@ -1,6 +1,9 @@
 const path = require('path')
- 
+
 module.exports = {
+  turbopack: {
+    root: '/Users/kamesh/Desktop/developer-portfolio-main',
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

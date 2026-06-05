@@ -4,7 +4,16 @@ import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
 
 async function getBlogs() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  const res = await fetch(
+    `https://dev.to/api/articles?username=${personalData.devUsername}&per_page=10`,
+    {
+      cache: 'no-store',
+      headers: {
+        'User-Agent': 'portfolio-app',
+        'Accept': 'application/json',
+      }
+    }
+  )
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
