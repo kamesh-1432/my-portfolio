@@ -6,6 +6,7 @@ export const projectsData = [
         tools: ['MERN', 'RESTful APIs'  ,'JWT' , 'RBAC' ,'TypeScript' ,'Query Optimization'],
         role: 'Full Stack Developer',
         code: 'https://github.com/kamesh-1432/Quizmania-MERN_stack-Major-project-Backend',
+        demo: 'https://quizmania-seven.vercel.app/',
         
     },
     {
