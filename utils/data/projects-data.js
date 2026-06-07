@@ -25,7 +25,7 @@ export const projectsData = [
         tools: ['Android SDK ','Java','MERN', 'RESTful APIs','JWT','RBAC' ,'Android Studio','FireBase','Google APIs'],
         code: 'https://github.com/kamesh-1432/ANITS_Campus_APP_Android_Development_Major_Project',
         role: 'Java Android Developer',
-        demo: '',
+        demo: 'https://appetize.io/app/b_4vdst45frllbctu2nssc7oiyi4?device=pixel7&osVersion=13.0',
     },
     {
         id: 4,
