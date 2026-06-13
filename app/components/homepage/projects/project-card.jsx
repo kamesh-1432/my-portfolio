@@ -6,96 +6,88 @@ import { FaCode } from 'react-icons/fa';
 import { MdOutlineOpenInNew } from 'react-icons/md';
 
 function ProjectCard({ project }) {
-
   return (
-    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
-      <div className="flex flex-row">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-      </div>
-      <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
-        <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-red-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
+    <div className="group relative rounded-2xl border border-[#1b2c68a0] bg-gradient-to-br from-[#111827] via-[#1a1443] to-[#0f0c41] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(139,92,246,0.25)] w-full">
+
+      {/* Subtle glow in top-right corner */}
+      <div className="pointer-events-none absolute -top-10 -right-10 w-32 h-32 rounded-full bg-violet-700/10"></div>
+
+      {/* Top gradient border */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
+
+      {/* Card Header */}
+      <div className="flex items-center justify-between px-5 py-4 border-b border-[#1b2c6840]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-green-300"></div>
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
+        <p className="text-[#16f2b3] text-sm font-semibold tracking-wide">
           {project.name}
         </p>
+        <span className="bg-[#1b2c68] text-violet-400 text-[11px] px-3 py-1 rounded-full border border-violet-700/30 tracking-wide">
+          {project.role?.split(' ')[0] || 'Project'}
+        </span>
       </div>
-      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-        <code className="font-mono text-xs md:text-sm lg:text-base">
-          <div className="blink">
-            <span className="mr-2 text-pink-500">const</span>
-            <span className="mr-2 text-white">project</span>
-            <span className="mr-2 text-pink-500">=</span>
-            <span className="text-gray-400">{'{'}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-            <span className="text-gray-400">{`'`}</span>
-            <span className="text-amber-300">{project.name}</span>
-            <span className="text-gray-400">{`',`}</span>
-          </div>
 
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">tools:</span>
-            <span className="text-gray-400">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">{tag}</span>
-                  {
-                    project.tools?.length - 1 !== i &&
-                    <span className="text-gray-400">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
-            <span className="text-gray-400">{"],"}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div><span className="text-gray-400">{`};`}</span></div>
-        </code>
+      {/* Card Body */}
+      <div className="px-5 py-5">
 
-        {/* Buttons */}
-        <div className="flex items-center gap-3 mt-6">
-          {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 rounded-md transition-all duration-300 hover:scale-105"
+        {/* Description */}
+        <p className="text-slate-400 text-sm leading-relaxed mb-5">
+          {project.description}
+        </p>
+
+        {/* Tech Stack */}
+        <p className="text-slate-500 text-[11px] uppercase tracking-widest mb-2">Tech Stack</p>
+        <div className="flex flex-wrap gap-2 mb-5">
+          {project.tools.map((tool, i) => (
+            <span
+              key={i}
+              className="bg-[#0f172a] text-violet-400 text-xs px-3 py-1 rounded-md border border-violet-700/30 font-mono"
             >
-              <MdOutlineOpenInNew size={16} />
-              Live Demo
-            </Link>
-          )}
-          {project.code && (
-            <Link
-              href={project.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white border border-violet-600 hover:bg-violet-600 rounded-md transition-all duration-300 hover:scale-105"
-            >
-              <FaCode size={14} />
-              GitHub Code
-            </Link>
-          )}
+              {tool}
+            </span>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#1b2c68] to-transparent mb-5"></div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between">
+          <p className="text-slate-500 text-xs">
+            Role: <span className="text-amber-400 font-medium">{project.role}</span>
+          </p>
+          <div className="flex items-center gap-2">
+            {project.code && (
+              <Link
+                href={project.code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-violet-400 border border-violet-700/50 hover:bg-[#1b2c68] transition-all duration-200 hover:scale-105 no-underline"
+              >
+                <FaCode size={12} />
+                Code
+              </Link>
+            )}
+            {project.demo && (
+              <Link
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-white bg-gradient-to-r from-violet-600 to-pink-500 hover:opacity-85 transition-all duration-200 hover:scale-105 no-underline"
+              >
+                <MdOutlineOpenInNew size={13} />
+                Demo
+              </Link>
+            )}
+          </div>
         </div>
 
       </div>
     </div>
   );
-};
+}
 
 export default ProjectCard;
