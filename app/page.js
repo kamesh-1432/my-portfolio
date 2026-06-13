@@ -8,6 +8,7 @@ import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
 import AchievementsSection from "./components/homepage/achievements";
+import SkillsSection from "./components/homepage/technical-arsenal";
 
 
 async function getData() {
@@ -43,6 +44,7 @@ export default async function Home() {
       <AboutSection />
       <Experience />
       <Skills />
+      <SkillsSection />
       <Projects />
       <AchievementsSection />
       <Education />

@@ -17,6 +17,33 @@ export const certificationsData = [
     category: "Cloud",
     credentialUrl: "https://cloud.google.com/certificate/your-id",
   },
+  {
+    id: 3,
+    title: "Google Cloud Fundamentals",
+    organization: "Google Cloud",
+    description: "Learned core GCP services including Compute Engine, Cloud Storage, and Kubernetes basics.",
+    date: "Mar 2024",
+    category: "Cloud",
+    credentialUrl: "https://cloud.google.com/certificate/your-id",
+  },
+  {
+    id: 4,
+    title: "Google Cloud Fundamentals",
+    organization: "Google Cloud",
+    description: "Learned core GCP services including Compute Engine, Cloud Storage, and Kubernetes basics.",
+    date: "Mar 2024",
+    category: "Cloud",
+    credentialUrl: "https://cloud.google.com/certificate/your-id",
+  },
+  {
+    id: 5,
+    title: "Google Cloud Fundamentals",
+    organization: "Google Cloud",
+    description: "Learned core GCP services including Compute Engine, Cloud Storage, and Kubernetes basics.",
+    date: "Mar 2024",
+    category: "Cloud",
+    credentialUrl: "https://cloud.google.com/certificate/your-id",
+  },
 ];
 
 export const awardsData = [
