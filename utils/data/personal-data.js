@@ -1,9 +1,8 @@
 export const personalData = {
   name: "KAMESWARA RAO KONCHADA",
   profile: '/profile.jpeg',
-  designation: "Full Stack Developer",
-  description: "My name is Kameswararao Konchada. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
-  email: 'konchadakameswararao007@gmail.com',
+  designation: "Full Stack Developer & AI Research Intern",
+  description: "I am a dedicated Computer Science and Engineering student with an unyielding commitment to building scalable, high-performance software. Driven by a deep passion for complex problem-solving, I thrive on translating abstract technical challenges into robust, production-ready applications. My expertise is anchored in core computer science fundamentals, data structures, and algorithmic efficiency, allowing me to approach software development with a highly analytical and structured mindset. As a full-stack developer with hands-on research experience in machine learning and data environments, I focus on engineering reliable backend architectures, optimizing database performance, and designing intuitive user interfaces. I am deeply committed to continuous technical evolution, precision engineering, and delivering impactful software solutions that meet demanding real-world requirements.",
   phone: '+91 7396671846',
   address: 'NAD X Road, Visakhapatnam-530027, Andhra Pradesh',
   github: 'https://github.com/kamesh-1432?tab=repositories',
