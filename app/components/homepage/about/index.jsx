@@ -1,9 +1,13 @@
-// @flow strict
+"use client";
 
+import React, { useState } from "react";
 import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 
 function AboutSection() {
+  // Track if the image has been clicked/tapped yet
+  const [isRevealed, setIsRevealed] = useState(false);
+
   return (
     <div id="about" className="my-12 lg:my-16 relative">
       <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
@@ -27,15 +31,17 @@ function AboutSection() {
             width={400}
             height={400}
             alt="Kamesh"
-            className="rounded-lg cursor-pointer transition-all duration-700
-                       grayscale
-                       [@media(hover:hover)]:hover:grayscale-0 [@media(hover:hover)]:hover:scale-110
-                       active:scale-105 active:grayscale-0"
+            onClick={() => setIsRevealed(true)}
+            className={`rounded-lg transition-all duration-700 cursor-pointer 
+              ${isRevealed 
+                ? 'grayscale-0 scale-105 shadow-lg border border-pink-500/20' 
+                : 'grayscale [@media(hover:hover)]:hover:grayscale-0 [@media(hover:hover)]:hover:scale-110'
+              }`}
           />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default AboutSection;
